@@ -320,7 +320,7 @@ class Frontend_Uploader {
 				'post_excerpt' => empty( $caption ) ? __( 'Unnamed', 'frontend-uploader' ) : $caption,
 			);
 
-			$m = $k;
+			$m = apply_filters('fu_before_file_creation', $k);
 
 			// Obfuscate filename if setting is present
 			if ( isset( $this->settings['obfuscate_file_name'] ) && 'on' === $this->settings['obfuscate_file_name']  ){
